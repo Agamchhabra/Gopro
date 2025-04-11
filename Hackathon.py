@@ -139,17 +139,3 @@ def plot_features(features):
 
 widgets.interact(plot_features, features=feature_toggle)
 
-!pip install voila pyngrok --quiet
-
-!pip install jupyter-client==7.4.9
-
-!pip install voila pyngrok --quiet
-
-from pyngrok import ngrok
-
-# Run voila in background on port 8866
-get_ipython().system_raw("voila weather_dashboard.ipynb --port=8866 --no-browser &")
-
-# Create public URL
-public_url = ngrok.connect(port=8866)
-print("🌐 Your dashboard is live at:", public_url)
